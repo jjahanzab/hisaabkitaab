@@ -1,6 +1,6 @@
 
 users credentials
 -----------------------------
-username:   noman
-email:      noman@store.com
-passowrd    noman1234
+username:   app
+email:      app@store.com
+passowrd    appstore1234
