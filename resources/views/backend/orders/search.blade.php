@@ -33,7 +33,7 @@
         @else
           <input type="date" class="form-control" name="from_date" required>
         @endif
-        <small>Select only 'From Date' for one day reports</small>
+        <small class="text-primary">Select only 'From Date' for one day reports</small>
       </div>
       <div class="form-group col-md-3">
         <label for="to_date">To:</label>

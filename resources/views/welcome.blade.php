@@ -49,9 +49,11 @@
             }
             .title1 {
                 font-size: 84px;
+                margin-bottom: 20px;
             }
             .title2 {
                 font-size: 34px;
+                margin-bottom: 20px;
             }
             .title3 {
                 font-size: 24px;
