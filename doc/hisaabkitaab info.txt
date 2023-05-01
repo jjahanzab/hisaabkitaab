@@ -1,5 +1,4 @@
-
-users credentials
+Account Credentials
 -----------------------------
 username:   app
 email:      app@store.com

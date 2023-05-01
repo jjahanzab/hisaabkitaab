@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 
 
-Route::get('/setup', 'SystemInfoController@setup');
+Route::get('/install', 'SystemInfoController@install');
 
 /*
 |--------------------------------------------------------------------------

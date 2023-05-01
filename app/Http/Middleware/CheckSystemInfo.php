@@ -19,11 +19,15 @@ class CheckSystemInfo
      */
     public function handle($request, Closure $next)
     {
-        $mac_ethernet = substr(shell_exec('getmac'), 159,20);
-        $mac_wireless = substr(exec('getmac'), 0,17);
 
-        $mac1 = $mac_ethernet;
-        $mac2 = $mac_wireless;
+        // $mac_ethernet = substr(shell_exec('getmac'), 159,20);
+        // $mac_wireless = substr(exec('getmac'), 0,17);
+
+        // $mac1 = $mac_ethernet;
+        // $mac2 = $mac_wireless;
+
+        // call getMac helper function //
+        $mac1 = getMac();
 
         $systeminfo = SystemInfo::where('type', 'mac1')->where('value', $mac1)->first();
         if ($systeminfo) {
@@ -34,14 +38,14 @@ class CheckSystemInfo
                 if ($systeminfo->value == $contents) {
                     
                 } else {
-                    return response()->json('Local Sytem is not valid for this app');
+                    return response()->json('local sytem is not valid for this app');
                 }
                 
             } else {
-                return response()->json('This Sytem is not valid for this app');
+                return response()->json('sytem file not exist for this app');
             }
         } else {
-            return response()->json('Sytem is not valid for this app');
+            return response()->json('sytem not valid for this app');
         }
 
         return $next($request);
