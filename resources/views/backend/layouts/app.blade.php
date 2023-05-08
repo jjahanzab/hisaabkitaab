@@ -41,6 +41,7 @@
       }
     }
   </style>
+
   <!-- Custom styles for this template -->
   <link href="dashboard.css" rel="stylesheet">
 
@@ -54,54 +55,34 @@
     </button>
     <ul class="navbar-nav px-3">
       <li class="nav-item text-nowrap">
-        <a class="nav-link text-white" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-          {{ __('Logout') }}
-        </a>
+        <span class="text-white font-weight-bold"> {{ Auth::user()->name }}</span>
+      </li>
+    </ul>
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link text-white" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-power-off"></i> {{ __('Logout') }}</a>
       </li>
     </ul>
   </nav>
 
   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-      @csrf
+    @csrf
   </form>
 
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="sidebar-sticky pt-3">
+
           <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link {{Request::segment(1)=='home'?'active':''}}" href="{{ route('home') }}">
                 <i class="fas fa-tv mr-1"></i> Dashboard
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link {{Request::segment(1)=='category'?'active':''}}" href="{{ route('category.index') }}">
-                <i class="fas fa-boxes mr-1"></i> Categories
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {{Request::segment(1)=='product'?'active':''}}" href="{{ route('product.index') }}">
-                <i class="fas fa-shopping-cart mr-1"></i> Products
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {{Request::segment(1)=='setting'?'active':''}}" href="{{ route('setting.index') }}">
-                <i class="fas fa-cog mr-1"></i> Settings
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('logout') }}"
-                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                <i class="fa fa-sign-out-alt mr-1"></i> Logout
-              </a>
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                @csrf
-              </form>
-            </li>
           </ul>
 
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-3 mb-1 text-muted">
             <span>Saved reports</span>
           </h6>
 
@@ -132,6 +113,41 @@
               </a>
             </li>
           </ul>
+
+          <div class="dropdown-divider"></div>
+
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link {{Request::segment(1)=='category'?'active':''}}" href="{{ route('category.index') }}">
+                <i class="fas fa-boxes mr-1"></i> Categories
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{Request::segment(1)=='product'?'active':''}}" href="{{ route('product.index') }}">
+                <i class="fas fa-shopping-cart mr-1"></i> Products
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{Request::segment(1)=='user'?'active':''}}" href="{{ route('user.index') }}">
+                <i class="fas fa-users mr-1"></i> Users
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{Request::segment(1)=='setting'?'active':''}}" href="{{ route('setting.index') }}">
+                <i class="fas fa-cog mr-1"></i> Settings
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('logout') }}"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <i class="fas fa-power-off mr-1"></i> Logout
+              </a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+              </form>
+            </li>
+          </ul>
+
         </div>
       </nav>
 

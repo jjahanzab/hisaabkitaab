@@ -88,6 +88,19 @@ Route::group(['middleware' => 'validated'], function () {
             Route::get('/', 'SettingController@create')->name('index');
             Route::post('/store', 'SettingController@store')->name('store');
         });
+        /*
+        |--------------------------------------------------------------------------
+        | User Routes
+        |--------------------------------------------------------------------------
+        */
+        Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
+            Route::get('/', 'UserController@index')->name('index');
+            Route::get('/create', 'UserController@create')->name('create');
+            Route::post('/store', 'UserController@store')->name('store');
+            Route::get('/edit/{id}', 'UserController@edit')->name('edit');
+            Route::post('/update', 'UserController@update')->name('update');
+            Route::get('/delete/{id}', 'UserController@destroy')->name('delete');
+        });
     });
     
 

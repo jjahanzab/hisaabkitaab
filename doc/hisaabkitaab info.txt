@@ -1,5 +1,5 @@
 Account Credentials
 -----------------------------
-username:   app
-email:      app@store.com
-passowrd    appstore1234
+username:   user
+email:      user@app.com
+passowrd    123456
