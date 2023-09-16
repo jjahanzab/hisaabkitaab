@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2023 at 04:15 PM
+-- Generation Time: Sep 15, 2023 at 06:39 AM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -69,7 +69,7 @@ CREATE TABLE `installs` (
 --
 
 INSERT INTO `installs` (`id`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'F', '2023-05-01 13:51:36', '2023-05-01 13:51:40');
+(1, 'T', '2023-05-01 13:51:36', '2023-05-01 13:51:40');
 
 -- --------------------------------------------------------
 
@@ -195,6 +195,13 @@ CREATE TABLE `settings` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `settings`
+--
+
+INSERT INTO `settings` (`id`, `shop_name`, `shop_contact`, `address`, `created_at`, `updated_at`) VALUES
+(1, 'Hisaab Kitaab', '03123456789', 'new town', '2023-05-01 09:19:53', '2023-05-07 23:38:37');
+
 -- --------------------------------------------------------
 
 --
@@ -208,6 +215,13 @@ CREATE TABLE `system_infos` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `system_infos`
+--
+
+INSERT INTO `system_infos` (`id`, `type`, `value`, `created_at`, `updated_at`) VALUES
+(1, 'mac1', '34-E6-D7-05-AC-E8', '2023-05-01 09:17:55', '2023-05-01 09:17:55');
 
 -- --------------------------------------------------------
 
@@ -231,7 +245,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'app', 'app@store.com', NULL, '$2y$10$RjH5HiX8kC2vd9LSSKMiXONs7JfgiKko6LWpkjWndmkMlke7f0dWy', NULL, '2022-03-07 12:27:15', '2022-03-07 12:27:15');
+(1, 'user', 'user@app.com', NULL, '$2y$10$sFqT5gYeZ8lphhsCYSj5ReDbXIe3o3wy8TvE0pfBzKug2Zah/R3Fy', NULL, '2023-05-08 07:30:07', '2023-05-08 02:32:39');
 
 --
 -- Indexes for dumped tables
@@ -354,13 +368,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `system_infos`
 --
 ALTER TABLE `system_infos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
